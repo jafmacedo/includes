@@ -1,12 +1,12 @@
 // script01.js
   const images = [
-    "./Compromisso/01.jpg",
-    "./Compromisso/02.jpg",
-    "./Compromisso/03.jpg",
-    "./Compromisso/04.jpg",
-    "./Compromisso/05.jpg",
-    "./Compromisso/06.jpg",
-    "./Compromisso/07.jpg"
+    "https://jafmacedo.github.io/includes/Compromisso/01.jpg",
+    "https://jafmacedo.github.io/includes/Compromisso/02.jpg",
+    "https://jafmacedo.github.io/includes/Compromisso/03.jpg",
+    "https://jafmacedo.github.io/includes/Compromisso/04.jpg",
+    "https://jafmacedo.github.io/includes/Compromisso/05.jpg",
+    "https://jafmacedo.github.io/includes/Compromisso/06.jpg",
+    "https://jafmacedo.github.io/includes/Compromisso/07.jpg"
   ];
 
   let current = 0;
