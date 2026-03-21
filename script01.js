@@ -1,12 +1,12 @@
 // script01.js
   const images = [
-    "https://1drv.ms/i/c/a722cc594cbf4e7e/IQRtft0mnuFZRZFgZ6OpK7hRAWCokgO71xQ1TrTzxZoJ_ME",
-    "https://1drv.ms/i/c/a722cc594cbf4e7e/IQTV1zaswN4tSZkJhpDYTCogAZXMZFM6z-yymagCSeJ9DrI",
-    "https://1drv.ms/i/c/a722cc594cbf4e7e/IQRmIXyuMSQ7QoB1s1YmMiXgAW8AazsJ851wnXbJ_7XNDHw",
-    "https://1drv.ms/i/c/a722cc594cbf4e7e/IQQiT-X2gRZMQYTphnW-9SgxAVT-HLtHk-C49R2Nt2iCsEE",
-    "https://1drv.ms/i/c/a722cc594cbf4e7e/IQTkK3pFD10YSaNwRzs-_9m1Ab5HNdj8lvPo9iXsdWYF-Vg",
-    "https://1drv.ms/i/c/a722cc594cbf4e7e/IQRSLWBZjCRmSof9GYY55goaASsjtmKn29Yrau0fCiB95qM",
-    "https://1drv.ms/i/c/a722cc594cbf4e7e/IQS2vqFS2oP9SYOzd8DAAZO1AQnW1O_mHtUVFFkGpkfwVTI"
+    "./Compromisso/01.jpg",
+    "./Compromisso/02.jpg",
+    "./Compromisso/03.jpg",
+    "./Compromisso/04.jpg",
+    "./Compromisso/05.jpg",
+    "./Compromisso/06.jpg",
+    "./Compromisso/07.jpg"
   ];
 
   let current = 0;
