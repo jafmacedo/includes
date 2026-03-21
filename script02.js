@@ -1,12 +1,12 @@
 // script01.js
   const images = [
-    "https://1drv.ms/i/c/a722cc594cbf4e7e/IQTmWH7eXeEJT43av0zPpdjwAWID9M4mi156SF7NROQsi3A",
-    "https://1drv.ms/i/c/a722cc594cbf4e7e/IQRCexjnR4f1TY1Sf_HEXG2PAc0fSQoVDyf5QGo9ZuoMG1E",
-	"https://1drv.ms/i/c/a722cc594cbf4e7e/IQRlZZVCnHn4S5u7MjTskIQRASEVDqY3y-07V7iKXMgkBHQ",
-	"https://1drv.ms/i/c/a722cc594cbf4e7e/IQQy-7lL4aoCQr-o780QBCUMAYnTLWgiNOkIK314fLFIwtI",
-	"https://1drv.ms/i/c/a722cc594cbf4e7e/IQRdYn1sN6kHS4D5SUJEDztXAUa8Iswi9-F5ztjc6IZfXq0",
-	"https://1drv.ms/i/c/a722cc594cbf4e7e/IQRKhCOc_yvWQJSWoMWMZHiNAaBxaPfQhK5__v-SZgO_8uc",
-	"https://1drv.ms/i/c/a722cc594cbf4e7e/IQR_g3cO0phST4eGtzJHqNVqAWzAuZ9RlKLlrbVUSKhlwHE"
+    "https://jafmacedo.github.io/includes/CuidadosInvisiveis/01.jpg",
+    "https://jafmacedo.github.io/includes/CuidadosInvisiveis/02.jpg",
+	"https://jafmacedo.github.io/includes/CuidadosInvisiveis/03.jpg",
+	"https://jafmacedo.github.io/includes/CuidadosInvisiveis/04.jpg",
+	"https://jafmacedo.github.io/includes/CuidadosInvisiveis/05.jpg",
+	"https://jafmacedo.github.io/includes/CuidadosInvisiveis/06.jpg",
+	"https://jafmacedo.github.io/includes/CuidadosInvisiveis/07.jpg"
     
   ];
 
