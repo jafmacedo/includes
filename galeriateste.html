@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria com Fullscreen</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #111;
+      color: #fff;
+      text-align: center;
+    }
+
+    .controls {
+      margin: 20px;
+    }
+
+    button {
+      padding: 10px;
+      margin: 5px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #222;
+      color: white;
+    }
+
+    button svg {
+      display: block;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 10px;
+      padding: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    .slider {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .slider-wrapper {
+      display: flex;
+      transition: transform 0.4s ease;
+      width: 100%;
+    }
+
+    .slide {
+      min-width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .slide img {
+      max-width: 90%;
+      max-height: 70vh;
+      border-radius: 10px;
+    }
+
+    .nav {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="controls">
+  <button onclick="showGrid()" title="Ver Grelha">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="3" y="3" width="7" height="7"></rect>
+      <rect x="14" y="3" width="7" height="7"></rect>
+      <rect x="14" y="14" width="7" height="7"></rect>
+      <rect x="3" y="14" width="7" height="7"></rect>
+    </svg>
+  </button>
+
+  <button onclick="showSlider()" title="Ver Slider">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+      <circle cx="8.5" cy="8.5" r="1.5"></circle>
+      <polyline points="21 15 16 10 5 21"></polyline>
+    </svg>
+  </button>
+
+  <button onclick="toggleFullscreen()" title="Fullscreen">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="4 14 4 20 10 20"></polyline>
+      <polyline points="20 10 20 4 14 4"></polyline>
+      <polyline points="14 20 20 20 20 14"></polyline>
+      <polyline points="10 4 4 4 4 10"></polyline>
+    </svg>
+  </button>
+</div>
+
+<div class="gallery" id="gallery"></div>
+
+<div class="slider" id="slider">
+  <div class="slider-wrapper" id="slider-wrapper"></div>
+  <div class="nav">
+    <button onclick="prev()">◀</button>
+    <button onclick="next()">▶</button>
+  </div>
+</div>
+
+<script>
+  const images = [
+    "https://picsum.photos/id/101/1200/800",
+    "https://picsum.photos/id/102/1200/800",
+    "https://picsum.photos/id/103/1200/800",
+    "https://picsum.photos/id/104/1200/800",
+    "https://picsum.photos/id/105/1200/800",
+    "https://picsum.photos/id/106/1200/800",
+    "https://picsum.photos/id/107/1200/800",
+    "https://picsum.photos/id/108/1200/800",
+    "https://picsum.photos/id/109/1200/800",
+    "https://picsum.photos/id/110/1200/800"
+  ];
+
+  let current = 0;
+  let startX = 0;
+
+  const gallery = document.getElementById("gallery");
+  const wrapper = document.getElementById("slider-wrapper");
+
+  images.forEach((src, index) => {
+    const img = document.createElement("img");
+    img.src = src;
+    img.onclick = () => {
+      current = index;
+      showSlider();
+    };
+    gallery.appendChild(img);
+
+    const slide = document.createElement("div");
+    slide.className = "slide";
+    const slideImg = document.createElement("img");
+    slideImg.src = src;
+    slide.appendChild(slideImg);
+    wrapper.appendChild(slide);
+  });
+
+  function showGrid() {
+    gallery.style.display = "grid";
+    document.getElementById("slider").style.display = "none";
+  }
+
+  function showSlider() {
+    gallery.style.display = "none";
+    document.getElementById("slider").style.display = "flex";
+    updateSlide();
+  }
+
+  function updateSlide() {
+    wrapper.style.transform = `translateX(-${current * 100}%)`;
+  }
+
+  function next() {
+    current = (current + 1) % images.length;
+    updateSlide();
+  }
+
+  function prev() {
+    current = (current - 1 + images.length) % images.length;
+    updateSlide();
+  }
+
+  wrapper.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  wrapper.addEventListener("touchend", (e) => {
+    let endX = e.changedTouches[0].clientX;
+    let diff = startX - endX;
+
+    if (diff > 50) next();
+    if (diff < -50) prev();
+  });
+
+  function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+    } else {
+      document.exitFullscreen();
+    }
+  }
+
+  // iniciar em slider
+  showSlider();
+</script>
+
+</body>
+</html>
