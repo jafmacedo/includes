@@ -74,7 +74,10 @@
     if (diff > 50) next();
     if (diff < -50) prev();
   });
-
+function toggleFakeFullscreen() {
+    const el = document.getElementById('slider');
+    el.classList.toggle('fake-fullscreen');
+}
 function toggleFullscreen() {
   const elem = document.getElementById("slider");
 
