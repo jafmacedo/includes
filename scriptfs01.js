@@ -75,13 +75,15 @@
     if (diff < -50) prev();
   });
 
-  function toggleFullscreen() {
-    if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen();
-    } else {
-      document.exitFullscreen();
-    }
+function toggleFullscreen() {
+  const elem = document.getElementById("slider");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen();
+  } else {
+    document.exitFullscreen();
   }
+}
 
   // iniciar em slider
   showSlider();
