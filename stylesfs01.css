@@ -52,7 +52,16 @@
       transition: transform 0.4s ease;
       width: 100%;
     }
-
+/* Classe para simular fullscreen dentro do iframe */
+.fake-fullscreen {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 9999 !important;
+    background: #000;
+}
     .slide {
       min-width: 100%;
       display: flex;
